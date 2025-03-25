@@ -1,16 +1,95 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Application Form</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <div class="container bg-white p-4 rounded shadow" style="max-width: 500px;">
+        <h2 class="text-center mb-4">Internship Application</h2>
+
+        <form id="internship-form" class="needs-validation" novalidate>
+            <!-- First Name -->
+            <div class="mb-3">
+                <label for="first-name-input" class="form-label">First Name</label>
+                <input type="text" id="first-name-input" class="form-control" required>
+                <div class="invalid-feedback">First name is required.</div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+                <label for="last-name-input" class="form-label">Last Name</label>
+                <input type="text" id="last-name-input" class="form-control" required>
+                <div class="invalid-feedback">Last name is required.</div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email-input" class="form-label">Email</label>
+                <input type="email" id="email-input" class="form-control" required>
+                <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+
+            <!-- College Name -->
+            <div class="mb-3">
+                <label for="college-input" class="form-label">College Name</label>
+                <input type="text" id="college-input" class="form-control" required>
+                <div class="invalid-feedback">College name is required.</div>
+            </div>
+
+            <!-- Roll No -->
+            <div class="mb-3">
+                <label for="roll-no-input" class="form-label">Roll No</label>
+                <input type="text" id="roll-no-input" class="form-control" required>
+                <div class="invalid-feedback">Roll number is required.</div>
+            </div>
+
+            <!-- Graduation Year -->
+            <div class="mb-3">
+                <label for="grad-year-input" class="form-label">Graduation Year</label>
+                <select id="grad-year-input" class="form-select" required>
+                    <option value="" disabled selected>Select Graduation Year</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+                <div class="invalid-feedback">Please select a graduation year.</div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" id="conditions-checkbox" class="form-check-input" required>
+                <label class="form-check-label" for="conditions-checkbox">I accept the terms and conditions</label>
+                <div class="invalid-feedback">You must accept the terms and conditions.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap Form Validation Script -->
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
 
 </body>
-
 </html>
